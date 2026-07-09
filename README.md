@@ -9,7 +9,7 @@ A context-aware Android module that adapts app behavior to the Ramadan fasting s
 
 ---
 
-## 📖 Overview
+## Overview
 
 Most mainstream fitness and diet-tracking apps (MyFitnessPal, HealthifyMe, etc.) are not designed with Ramadan's fasting pattern in mind. They send meal reminders during fasting hours, miscalculate hydration goals, and lack any awareness of Sehri/Iftar timing — creating a disconnected experience for fasting users.
 
@@ -19,20 +19,20 @@ Most mainstream fitness and diet-tracking apps (MyFitnessPal, HealthifyMe, etc.)
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 |---|---|
-| 🕌 **Sehri & Iftar Timing** | Location-based daily prayer time calculation (Fajr & Maghrib) |
-| 🔔 **Smart Notifications** | Alerts before Sehri ends and when Iftar begins |
-| 💧 **Fasting-Aware Hydration** | Hydration reminders automatically pause during fasting hours |
-| 🍽️ **Iftar Nutrition Suggestions** | Balanced Iftar meal ideas based on daily calorie budget |
-| ⏱️ **Countdown Timer** | Live countdown to next Sehri/Iftar on the dashboard |
-| 🌐 **Toggle On/Off** | Simple settings switch to enable or disable Ramadan Mode |
+|  **Sehri & Iftar Timing** | Location-based daily prayer time calculation (Fajr & Maghrib) |
+|  **Smart Notifications** | Alerts before Sehri ends and when Iftar begins |
+|  **Fasting-Aware Hydration** | Hydration reminders automatically pause during fasting hours |
+|  **Iftar Nutrition Suggestions** | Balanced Iftar meal ideas based on daily calorie budget |
+|  **Countdown Timer** | Live countdown to next Sehri/Iftar on the dashboard |
+|  **Toggle On/Off** | Simple settings switch to enable or disable Ramadan Mode |
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Language:** Kotlin
 - **UI:** Jetpack Compose
@@ -43,19 +43,9 @@ Most mainstream fitness and diet-tracking apps (MyFitnessPal, HealthifyMe, etc.)
 
 ---
 
-## 📂 Project Structure
+ 
 
-app/
- └── src/main/java/com/rakibcse30/ramadanmode/
-      ├── data/          # Room entities, DAOs, repository
-      ├── network/       # Retrofit API service (prayer times)
-      ├── ui/            # Jetpack Compose screens
-      ├── viewmodel/     # ViewModels for state management
-      └── util/          # Prayer time calculation, notification scheduling
-
----
-
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Android Studio (latest stable version)
@@ -77,7 +67,7 @@ https://github.com/RakibCSE30/ramadan-mode-android.git
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [x] Project setup & repository structure
 - [ ] Prayer time API integration (Sehri/Iftar)
@@ -90,13 +80,13 @@ https://github.com/RakibCSE30/ramadan-mode-android.git
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 This is currently a solo academic/personal project. Suggestions and feedback are welcome via [Issues](https://github.com/RakibCSE30/ramadan-mode-android/issues).
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
 
