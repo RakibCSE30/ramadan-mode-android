@@ -100,5 +100,11 @@ fun LocationScreen(modifier: Modifier = Modifier) {
         }) {
             Text("Get My Location")
         }
+
+        // Iftar Nutrition Suggestions দেখানো
+        Text(text = "Iftar Nutrition Suggestions:")
+        NutritionData.iftarSuggestions.forEach { item ->
+            Text(text = "• ${item.name} — ${item.benefit}")
+        }
     }
 }
