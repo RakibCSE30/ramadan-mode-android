@@ -10,13 +10,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
-/**
- * এই ক্লাসটা notification channel তৈরি করে এবং notification দেখানোর কাজ করে।
- */
 object NotificationHelper {
 
     const val CHANNEL_ID = "ramadan_mode_channel"
     const val IFTAR_NOTIFICATION_ID = 1001
+    const val HYDRATION_NOTIFICATION_ID = 1002
 
     fun createNotificationChannel(context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -25,7 +23,7 @@ object NotificationHelper {
                 "Ramadan Mode Reminders",
                 NotificationManager.IMPORTANCE_HIGH
             ).apply {
-                description = "Sehri and Iftar time reminders"
+                description = "Sehri, Iftar, and hydration reminders"
             }
             val manager = context.getSystemService(NotificationManager::class.java)
             manager.createNotificationChannel(channel)
@@ -54,9 +52,26 @@ object NotificationHelper {
             .setAutoCancel(true)
             .build()
 
-        // try-catch দিয়ে ঘিরে দেওয়া হলো, যাতে permission হঠাৎ revoke হলেও অ্যাপ crash না করে
         try {
             NotificationManagerCompat.from(context).notify(IFTAR_NOTIFICATION_ID, notification)
+        } catch (e: SecurityException) {
+            e.printStackTrace()
+        }
+    }
+
+    fun showHydrationReminder(context: Context) {
+        if (!hasNotificationPermission(context)) return
+
+        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setSmallIcon(android.R.drawable.ic_dialog_info)
+            .setContentTitle("Stay Hydrated")
+            .setContentText("Time to drink some water!")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setAutoCancel(true)
+            .build()
+
+        try {
+            NotificationManagerCompat.from(context).notify(HYDRATION_NOTIFICATION_ID, notification)
         } catch (e: SecurityException) {
             e.printStackTrace()
         }
